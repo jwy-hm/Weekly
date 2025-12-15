@@ -8,7 +8,7 @@ export const SITE = {
     "https://gw.alicdn.com/imgextra/i4/O1CN010j3h201UDilmn716N_!!6000000002484-2-tps-1280-640.png",
   //homePage: "https://weekly.tw93.fun",
   //blogPage: "https://tw93.fun/",
-  homePage: "http://safehome.eu.org/",
+  homePage: "http://weekly.safehome.eu.org/",
   blogPage: "http://safehome.eu.org/",
   twitterId: "HiTw93",
   githubId: "jwy-hm",
