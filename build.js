@@ -32,7 +32,7 @@ async function main() {
     const [issueNumberPart, ...restTitleParts] = oldTitle.split("-");
     const num = parseInt(issueNumberPart);
     const shortTitle = restTitleParts.join("-") || issueNumberPart;
-    const url = `https://weekly.tw93.fun/posts/${num}`;
+    const url = `https://weekly.safehome.eu.org/posts/${num}`;
     const title = `第 ${num} 期 - ${shortTitle}`;
 
     // Read markdown file to extract cover image and description

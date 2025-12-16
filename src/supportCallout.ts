@@ -1,6 +1,6 @@
 export const SUPPORT_CALLOUT = {
-  cta: "觉得不错，请 Tw93 喝冰可乐 🥤",
-  link: "https://miaoyan.app/cats.html?name=潮流周刊",
+  cta: "觉得不错，请 jwy-hm 喝冰可乐 🥤",
+  link: "https://miaoyan.app/cats.html?name=潮流周刊",//修改
 };
 
 export const renderSupportCalloutForRSS = () => {

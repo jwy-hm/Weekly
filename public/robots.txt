@@ -10,7 +10,7 @@ User-agent: Baiduspider
 Allow: /
 
 # Sitemap
-Sitemap: https://weekly.tw93.fun/sitemap-index.xml
+Sitemap: https://weekly.safehome.eu.org/sitemap-index.xml
 
 # Disallow crawling of these directories
 Disallow: /pagefind/

@@ -18,12 +18,12 @@ export async function GET() {
 
   return rss({
     title: "潮流周刊",
-    description: "记录工程师 Tw93 的不枯燥生活",
-    site: "https://weekly.tw93.fun/",
+    description: "记录工程师 jwy-hm 的不枯燥生活",
+    site: "https://weekly.safehome.eu.org/",
     xmlns: {
       atom: "http://www.w3.org/2005/Atom",
     },
-    customData: `<atom:icon>https://gw.alipayobjects.com/zos/k/qv/coffee-2-icon.png</atom:icon><atom:logo>https://gw.alipayobjects.com/zos/k/qv/coffee-2-icon.png</atom:logo><image><url>https://gw.alipayobjects.com/zos/k/qv/coffee-2-icon.png</url><title>潮流周刊</title><link>https://weekly.tw93.fun/</link></image><follow_challenge><feedId>41147805276726275</feedId><userId>42909600318350336</userId></follow_challenge>`,
+    customData: `<atom:icon>https://gw.alipayobjects.com/zos/k/qv/coffee-2-icon.png</atom:icon><atom:logo>https://gw.alipayobjects.com/zos/k/qv/coffee-2-icon.png</atom:logo><image><url>https://gw.alipayobjects.com/zos/k/qv/coffee-2-icon.png</url><title>潮流周刊</title><link>https://weekly.safehome.eu.org/</link></image><follow_challenge><feedId>41147805276726275</feedId><userId>42909600318350336</userId></follow_challenge>`,
     items: await Promise.all(
       posts.map(async (item) => {
         const numericLink = item.frontmatter.numericUrl ?? toNumericUrl(item.url);
