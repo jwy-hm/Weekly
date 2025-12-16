@@ -1,0 +1,111 @@
+---
+import { SITE } from '@/config';
+import MainHead from '@/components/HeadCommon.astro';
+
+const sponsors = [
+  { name: "张三", date: "2023-12-01", amount: "¥10" },
+  { name: "李四", date: "2023-12-05", amount: "¥20" },
+  { name: "王五", date: "2023-12-10", amount: "一杯咖啡" },
+  // 在这里添加新的捐赠者...
+];
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <MainHead />
+    <title>支持我 | {SITE.title}</title>
+    <meta name="description" content="感谢您的支持，让周刊持续更新" />
+    <style>
+        /* 复刻原版的渐变背景风格 */
+        body {
+            background: linear-gradient(180deg, #36563C 0%, #ffffff 600px);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        
+        .sponsor-card {
+            transition: transform 0.2s;
+        }
+        .sponsor-card:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body class="w-full overflow-x-hidden">
+    <!-- 顶部返回按钮 -->
+    <a href="/" 
+       class="fixed top-8 left-8 z-50 bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full shadow-lg hover:bg-white/30 transition font-bold no-underline">
+       ← 返回首页
+    </a>
+
+    <div class="pt-24 pb-12 px-6 mx-auto max-w-7xl">
+        <!-- 头部区域 -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-12 text-white">
+            <!-- 左侧：标题与文案 -->
+            <div class="md:w-1/2 text-center md:text-left space-y-6">
+                <h1 class="text-5xl md:text-7xl font-bold tracking-wider">
+                    感谢支持
+                </h1>
+                <p class="text-xl md:text-2xl opacity-90 leading-relaxed">
+                    如果我的周刊对你有所启发，<br/>
+                    欢迎请我喝一杯冰可乐 🥤
+                </p>
+                <p class="text-sm opacity-75 pt-4">
+                    您的支持将用于服务器维护与内容创作
+                </p>
+            </div>
+
+            <!-- 右侧：收款码展示区 -->
+            <div class="md:w-1/2 flex flex-col sm:flex-row gap-6 justify-center md:justify-end">
+                <!-- 微信支付 -->
+                <div class="bg-white p-4 rounded-2xl shadow-xl transform rotate-2 hover:rotate-0 transition duration-300">
+                    <div class="w-48 h-48 bg-gray-100 rounded-lg flex items-center justify-center mb-2 overflow-hidden">
+                        <!-- 请替换下面的 src 为你的微信收款码图片地址 -->
+                        <img src="https://cdn.jsdelivr.net/gh/jwy-hm/picture/20251216171720808.png" alt="微信支付" class="w-full h-full object-cover"/>
+                    </div>
+                    <p class="text-center text-green-600 font-bold">微信支付</p>
+                </div>
+                
+                <!-- 支付宝 -->
+                <div class="bg-white p-4 rounded-2xl shadow-xl transform -rotate-2 hover:rotate-0 transition duration-300">
+                    <div class="w-48 h-48 bg-gray-100 rounded-lg flex items-center justify-center mb-2 overflow-hidden">
+                        <!-- 请替换下面的 src 为你的支付宝收款码图片地址 -->
+                        <img src="https://cdn.jsdelivr.net/gh/jwy-hm/picture/20251216171455088.png" alt="支付宝" class="w-full h-full object-cover"/>
+                    </div>
+                    <p class="text-center text-blue-500 font-bold">支付宝</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 装饰分割线 -->
+        <div class="mt-24 mb-12 border-t border-white/20"></div>
+
+        <!-- 捐赠名单区域 -->
+        <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">
+                ❤️ 感谢以下朋友的慷慨支持
+            </h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {sponsors.map((person) => (
+                    <div class="sponsor-card bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col items-center justify-center text-center">
+                        <span class="font-bold text-gray-800 text-lg">{person.name}</span>
+                        <div class="text-xs text-gray-400 mt-1 space-x-1">
+                            <span>{person.date}</span>
+                            <span>•</span>
+                            <span class="text-yellow-600">{person.amount}</span>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            <!-- 底部补充说明 -->
+            <div class="text-center mt-12 text-gray-400 text-sm">
+                * 名单人工更新，如有遗漏请联系我
+            </div>
+        </section>
+    </div>
+</body>
+</html>
